@@ -73,9 +73,9 @@ Image captioning is the task to automatically describe the content of an image, 
 
 \section{Introduction}
 
-Deep learning technology has been widely used in many aspects \cite{krizhevsky2012imagenet}, such as face recognition, natural language processing and etc. It has shown remarkable learning ability in many areas. Among them, the most common form of machine learning, deep or not, is supervised learning \cite{lecun2015deep}. Supervised learning requires labeled training data and typically outputs a label when given a new input \cite{lecun1998gradient}. To deal with inputs with correlations in time such as an sentence, recurrent neural network (RNN) \cite{mikolov2010recurrent}, typically implemented with long short-term memory (LSTM) units, is employed.
+With the help of new computing hardware and access to big amount of data, Deep learning has been widely used in many areas \cite{krizhevsky2012imagenet}, such as face recognition, autonomous car, and etc. remarkable learning capability of deep learning has shown in many areas. Among them, the most common form of deep learning, is supervised learning \cite{lecun2015deep}. Supervised learning requires labeled training data and is often used to outputs a label when given a new input \cite{lecun1998gradient}. To deal with inputs with correlations in time such as an sentence, recurrent neural network (RNN) \cite{mikolov2010recurrent}, typically in the form of long short-term memory (LSTM) units, is employed.
 
-Image captioning is the procedure to automatically describe the content of an image, as shown in Fig. \ref{cap_fig}. And there has been a recent surge of interest in developing models that can generate captions for images or videos. Most of these approaches learn a probabilistic model of the caption, conditioned on an image or a video. Most recent work on visual captioning first extracts features from an image, obtaining a fixed-length vector representation of a given image or video. Then a language, usually a recurrent neural network (RNN), typically implemented with long short-term memory (LSTM) units \cite{graves2013speech}, is employed to generate a caption while the image's vector representation is the input \cite{vinyals2015show}.
+There has been a recent surge of interest in the area of image captioning, where deep learining is heavily deployed. Image captioning, is the procedure to automatically generating natural language to describe the content of an image, as shown in Fig. \ref{cap_fig}.. Most of these approaches learn a probabilistic model of the caption, conditioned on an image or a video. One of the most commen method in image captioning is to use convolutionary nerual networks to first extracts features from an image, obtaining a fixed-length vector representation of a given image or video, which is then fed into a language model, usually prensented to be a recurrent neural network (RNN), typically implemented with long short-term memory (LSTM) units \cite{graves2013speech}, to generate a natural language caption. \cite{vinyals2015show}.
 
 obtaining a fixed-length vector representation
 \begin{figure}
@@ -84,9 +84,8 @@ obtaining a fixed-length vector representation
   \caption{Examples of image captioning.}\label{cap_fig}
 \end{figure}
 
-Though good results have been achieved, most methods are still far away from human performance and the models usually don't consider the grammar rules. Recent work shows that adding explicit high-level semantic concepts of the input image/video can further improve visual captioning. For instance, in \cite{you2016image}, a model of semantic attention is proposed which selectively attends to semantic concepts through a soft attention mechanism.
+Though certain progress have been achieved, outcomes of most methods are still infrior than from human performance. Recent work shows that considering explicit high-level semantic concepts of the input image/video can further improve the performance of visual captioning. For instance, in \cite{you2016image}, a model of semantic attention is proposed which selectively attends to semantic concepts through a soft attention mechanism.
 
-goals, deliverables, overview architecture, use cases, modules/subsystems, flowcharts, algorithms, potential results (performance metrics, success evaluation criteria, mock-up result figures x,y,z curves etc.).
 
 
 \section{Project Description}
