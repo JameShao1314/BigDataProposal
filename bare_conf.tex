@@ -46,7 +46,7 @@
 \author{\IEEEauthorblockN{Heng Qiao}
 \IEEEauthorblockA{Department of Electrical\\ and Computer Engineering\\
 University of Florida\\
-Email:}
+Email: hengqiao@ufl.edu}
 \and
 \IEEEauthorblockN{Tong Shao}
 \IEEEauthorblockA{Department of Electrical\\ and Computer Engineering\\
@@ -56,7 +56,7 @@ Email: stlm1991@ufl.edu}
 \IEEEauthorblockN{Yichen Liang}
 \IEEEauthorblockA{Department of Electrical\\ and Computer Engineering\\
 University of Florida\\
-Email: }}
+Email: yichenliang@ufl.edu}}
 
 % make the title area
 \maketitle
@@ -64,7 +64,7 @@ Email: }}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Image captioning is the task to automatically describe the content of an image, which is a fundamental problem in artificial intelligence that connects computer vision and natural language processing. In this course project, we plan to develop an image captioning system based on the recurrent neural network(RNN) Model. As the most widely used scheme, two neural networks are introduced. The first one is a pre-trained convolutional neural network (CNN) that converts the image into feature vectors, such as the VggNet, ResNet and Inception. Serving as the core of the scheme, the second one adopts the recurrent neural network (RNN) model. It takes the image feature as the input and generate the word vectors of a sentence (caption). The model is trained to maximize the likelihood of the target description sentence given the training image. Based on this, we aim at implementing some assistant techniques to further improve the performance, such as the semantic structures and more optimized neural network structures. This scheme will be implemented in Tensorflow. Experiments will be conducted on public dataset MS COCO and related evaluation scores such as the BLEU-4 score will be provided. Also, the final report, slides and other related material will be prepared as well.
+Image captioning is the task to automatically generate the description of the content of an image, which is a fundamental problem in artificial intelligence that connects computer vision and natural language processing. In this course project, we plan to develop an image captioning system based on the recurrent neural network(RNN) Model. As the most widely used scheme, two neural networks are introduced. The first one is a pre-trained convolutional neural network (CNN) that converts the image into feature vectors, such as the VggNet, ResNet and Inception. Serving as the core of the scheme, the second one adopts the recurrent neural network (RNN) model. It takes the image feature as the input and generate the word vectors of a sentence (caption). The model is trained to maximize the likelihood of the target description sentence given the training image. Based on this, we aim at implementing some assistant techniques to further improve the performance, such as the semantic structures and more optimized neural network structures. This scheme will be implemented in Tensorflow. Experiments will be conducted on public dataset MS COCO and related evaluation scores such as the BLEU-4 score will be provided. Also, the final report, slides and other related material will be prepared as well.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
@@ -75,9 +75,8 @@ Image captioning is the task to automatically describe the content of an image, 
 
 With the help of new computing hardware and access to big amount of data, Deep learning has been widely used in many areas \cite{krizhevsky2012imagenet}, such as face recognition, autonomous car, and etc. remarkable learning capability of deep learning has shown in many areas. Among them, the most common form of deep learning, is supervised learning \cite{lecun2015deep}. Supervised learning requires labeled training data and is often used to outputs a label when given a new input \cite{lecun1998gradient}. To deal with inputs with correlations in time such as an sentence, recurrent neural network (RNN) \cite{mikolov2010recurrent}, typically in the form of long short-term memory (LSTM) units, is employed.
 
-There has been a recent surge of interest in the area of image captioning, where deep learining is heavily deployed. Image captioning, is the procedure to automatically generating natural language to describe the content of an image, as shown in Fig. \ref{cap_fig}.. Most of these approaches learn a probabilistic model of the caption, conditioned on an image or a video. One of the most commen method in image captioning is to use convolutionary nerual networks to first extracts features from an image, obtaining a fixed-length vector representation of a given image or video, which is then fed into a language model, usually prensented to be a recurrent neural network (RNN), typically implemented with long short-term memory (LSTM) units \cite{graves2013speech}, to generate a natural language caption. \cite{vinyals2015show}.
+There has been a recent surge of interest in the area of image captioning, where deep learning is heavily deployed. Image captioning, is the procedure to automatically generating natural language to describe the content of an image, as shown in Fig. \ref{cap_fig}.. Most of these approaches learn a probabilistic model of the caption, conditioned on an image or a video. One of the most common method in image captioning is to use convolutionary neural networks to first extracts features from an image, obtaining a fixed-length vector representation of a given image or video, which is then fed into a language model, usually presented to be a recurrent neural network (RNN), typically implemented with long short-term memory (LSTM) units \cite{graves2013speech}, to generate a natural language caption. \cite{vinyals2015show}.
 
-obtaining a fixed-length vector representation
 \begin{figure}
   \centering
   \includegraphics[width=1.0\linewidth]{figures/caption.pdf}
@@ -93,7 +92,7 @@ We aim at designing a typical image captioning system while adding some techniqu
 \subsection{Goals}
 Our main goal is to implement an image captioning system which could automatically describe the content of an image as described before. The scheme will be implemented in Tensorflow and experiments will be conducted on MS COCO dataset.
 
-The syetem should be able to produce reasonable captions for input images. And the scores (based on popular metrics) on the MS COCO datasets should be close to, i.e. of the same level as the state-of-the-art methods.
+The system should be able to produce reasonable captions for input images. And the scores (based on popular metrics) on the MS COCO dataset should be close to, i.e. of the same level as the state-of-the-art methods.
 
 \subsection{Deliverables}
 
@@ -108,24 +107,22 @@ As shown in Fig. \ref{framework_fig}, the basic architecture has two parts. The 
   \caption{Overview Architecture of our image captioning scheme.}\label{framework_fig}
 \end{figure}
 
+ Based on this, we will also implement some assistant techniques to further improve the performance, such as the semantic structures and more optimized neural network structures. The detailed scheme will be decided after further paper review.
+
 \subsection{potential results}
 
-As described before, this scheme should produce reasonable captions for input images. We will present some results of images with typical scenes such as sports activities, natural scenes, indoor scenes and etc.
- 
-Meanwhile, we will test the scheme on the widely used MS COCO dataset. And the scores based on several popular metrics will be provided including the BLEU, METEOR and CIDER. 
+As described before, this scheme should produce reasonable captions for input images. We will present some results of images with typical scenes such as sports activities, natural scenes, indoor scenes and etc., as shown in Fig .\ref{results_fig}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{figures/results.png}
+  \caption{Typical results of our image captioning scheme.}\label{results_fig}
+\end{figure}
+
+Meanwhile, we will test the scheme on the widely used MS COCO dataset. And the scores based on several popular metrics will be provided including the BLEU, METEOR and CIDER \cite{vedantam2015cider}.
 
 We expect our scheme will produce pretty good results on the MS COCO dataset. It should be close to, i.e. of the same level as the state-of-the-art methods such as the Show and Tell \cite{vinyals2015show}.
 
-\subsection{Weekly Progress Plan}
-The schedule of each task is as following:
-\\1) Scheme design
-\\March 4-March 11
-\\2) Code implementing
-\\March 12-March 31
-\\3) Final Report Writing
-\\April 1-April 15
-\\4) Slides and Presentation
-\\April 16-April 23
 \bibliographystyle{IEEEtran}
 \bibliography{refs}
 
